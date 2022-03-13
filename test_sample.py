@@ -3,15 +3,9 @@ import pytest
 from target_sample import MyException, inc, raiseMyExceptionIf100
 
 
-def test_inc_1():
-    assert inc(3) == 5
-
 # success
 def test_inc_2():
     assert inc(4) == 5
-
-def test_inc_3():
-    assert inc(5) == 5
 
 # success
 def test_raiseMyExceptionIf100_1():
