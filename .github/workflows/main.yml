@@ -46,5 +46,12 @@ jobs:
       - name: Run Tests
         run: pipenv run pytest
 
-      - name: Generate date info
+      - name: Generate time info
         run: pipenv run python generate_file.py
+
+      - name: Push time info
+        # コミット・プッシュを行ってくれる
+        uses: stefanzweifel/git-auto-commit-action@v4.13.1
+        with:
+          # Commit message
+          commit_message: time-info(auto)
