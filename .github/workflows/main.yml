@@ -34,8 +34,6 @@ jobs:
         with:
           # Version range or exact version of a Python version to use, using SemVer's version range syntax.
           python-version: ${{ matrix.python-version }}
-          # Used to specify a package manager for caching in the default directory. Supported values: pip, pipenv.
-          cache: pipenv
           # The target architecture (x86, x64) of the Python interpreter.
           architecture: x64
           # Used to pull python distributions from actions/python-versions. Since there's a default, this is typically not supplied by the user.
@@ -48,10 +46,3 @@ jobs:
 
       - name: Generate time info
         run: pipenv run python generate_file.py
-
-      - name: Push time info
-        # コミット・プッシュを行ってくれる
-        uses: stefanzweifel/git-auto-commit-action@v4.13.1
-        with:
-          # Commit message
-          commit_message: time-info(auto)
